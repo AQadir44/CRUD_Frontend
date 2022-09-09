@@ -1,0 +1,40 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+
+  <div  class="form-group row" style="width: 60%;">
+    <div class="col-sm-12">
+      <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">EmployeeName</label>
+      <input type="text" class="form-control"
+      [(ngModel)]="EmployeeName"
+       placeholder="Enter Employee Name">
+    </div>
+    <div class="col-sm-12">
+      <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Department</label>
+      <select class="form-select" [(ngModel)]="Department">
+        <option *ngFor="let depName of DepartmentList">
+            {{depName.DepartmentName}}
+        </option>
+    </select>
+    </div>
+    <div class="col-sm-12">
+      <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">DateofJoining</label>
+      <input type="date" id="date1" class="form-control" [(ngModel)]="DateofJoining">
+
+       <!-- <input type="date" class="form-control"  [ngModel]="DateOfJoining" (change)="DateOfJoining= $event.target.valueAsDate" > -->
+
+    </div>
+  </div>
+  <div class="ms-5 bd-highlight d-flex justify-content-center" style="width: 40%;">
+    <div class="">
+      <img [src]=PhotoFilePath height="250px;" width="200px;">
+      <input type="file" (change)="uploadPhoto($event)" class="mt-2">
+    </div>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col d-flex justify-content-center">
+    <button (click)="AddEmployee()" *ngIf="Emp.EmployeeId==0" class="btn btn-success m-1" data-bs-dismiss="modal" aria-label="Close" >ADD</button>
+    <button (click)="UpdateEmployee()" *ngIf="Emp.EmployeeId!=0"  class="btn btn-success m-1" data-bs-dismiss="modal" aria-label="Close">Update</button>
+    <button class="btn btn-danger m-1"  data-bs-dismiss="modal" aria-label="Close" >Cancel</button>
+  </div>
+</div>

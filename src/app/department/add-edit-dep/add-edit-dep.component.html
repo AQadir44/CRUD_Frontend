@@ -1,0 +1,14 @@
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Department Name</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" [(ngModel)]="DepartmentName"
+    placeholder="Enter Department Name">
+</div>
+<div class="row ">
+  <div class="col d-flex justify-content-center">
+    <button (click)="AddDepartment()" *ngIf="dep.DepartmentId==0" data-bs-dismiss="modal" aria-label="Close"
+      class=" btn btn-success me-3">Add</button>
+    <button (click)="UpdateDepartment()" *ngIf="dep.DepartmentId!=0" data-bs-dismiss="modal" aria-label="Close"
+      class=" btn btn-success me-3">Update</button>
+    <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close" (click)="closeClick()">Cancel</button>
+  </div>
+</div>
